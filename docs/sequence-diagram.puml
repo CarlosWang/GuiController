@@ -1,0 +1,25 @@
+@startuml
+使用者 -> Form : 載入畫面
+Form -> UseCaseController : Init
+UseCaseController -> GUIController : Init
+GUIController -> GUIController : enterStart1
+
+使用者 -> Form : 按下開始按鈕
+Form -> UseCaseController : onStartButtonClicked
+UseCaseController -> GUIController : startButtonClicked
+GUIController -> UseCaseController : getAnimals
+UseCaseController --> GUIController : animals
+GUIController -> UseCaseController : setAnimals
+UseCaseController -> Form
+GUIController -> GUIController : enterState2
+
+
+使用者 -> Form : 按下清除按鈕
+Form -> UseCaseController : onClearButtonClicked
+UseCaseController -> Form
+
+使用者 -> Form : 按下結束按鈕
+Form -> UseCaseController : onEndButtonClicked
+UseCaseController -> GUIController : endButtonClicked
+GUIController -> GUIController : enterStart1
+@enduml

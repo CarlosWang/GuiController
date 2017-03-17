@@ -1,0 +1,9 @@
+@startuml
+scale 350 width
+[*] --> State1
+
+State1 -> State2 : startButtonClicked
+State2 -> State1 : endButtonClicked
+
+}
+@enduml
